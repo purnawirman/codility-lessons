@@ -9,12 +9,15 @@ class Solution {
         // write your code in Java SE 8
         int[][] prefix = new int[3][S.length()];
         for (int i = 0; i < S.length(); i++) {
+            for (int j = 0; j < 3; j++) 
+                prefix[j][i] = (i > 0? prefix[j][i-1]: 0);
+
             if (S.charAt(i) == 'A') {
-                prefix[0][i] = (i > 0? prefix[0][i-1]: 0) + 1;
+                prefix[0][i] = prefix[0][i] + 1;
             } else if (S.charAt(i) == 'C') {
-                prefix[1][i] = (i > 0? prefix[1][i-1]: 0) + 1;
+                prefix[1][i] = prefix[1][i] + 1;
             } else if (S.charAt(i) == 'G') {
-                prefix[2][i] = (i > 0? prefix[2][i-1]: 0) + 1;
+                prefix[2][i] = prefix[2][i] + 1;
             }
         }
 
@@ -32,8 +35,8 @@ class Solution {
         }
 
         return result;
-
     }
+
 
     private int getSum(int[] pre, int i, int j) {
         return pre[j] - (i > 0? pre[i-1]: 0);
