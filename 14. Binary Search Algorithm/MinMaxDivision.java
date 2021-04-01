@@ -23,8 +23,10 @@ class Solution {
     private boolean check(int[] A, int K, int maximal) {
         int cumsum = 0;
         int block = 1;
-        for (int i = 0; i < A.length; i++) {
-            if (cumsum + A[i] <= maximal) {
+        for(int i = 0; i < A.length; i++) {
+            if (A[i] > maximal) {
+                return false;
+            } else if (cumsum + A[i] <= maximal) {
                 cumsum += A[i];
             } else {
                 block++;
