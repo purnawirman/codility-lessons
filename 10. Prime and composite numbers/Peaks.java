@@ -1,6 +1,10 @@
 // you can also use imports, for example:
 import java.util.*;
 
+// binary search will not work
+// see this input 0 1 0 1   0 0 0 0    1 0 1 0
+// 1 - possible, 2 - possible, 3 - not, 4 - possible
+
 class Solution {
     public int solution(int[] A) {
         
