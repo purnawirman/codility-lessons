@@ -18,18 +18,18 @@ class Solution {
                     if (prevIdx < -1) break;
                     if (prevIdx == -1){
                         minStep = 1; // directly from source
-                    } else if (A[prevIdx] == 1) {
+                    } else if (A[prevIdx] == 1 && dp[prevIdx] > 0) {
                         minStep = Math.min(minStep, 1 + dp[prevIdx]);
                     }
                 }
                 if(minStep == Integer.MAX_VALUE) {
-                    A[i] = 0;
+                    dp[i] = -1;
                 } else {
                     dp[i] = minStep;
                 }
             }
         }
-        return dp[A.length] == Integer.MAX_VALUE? -1: dp[A.length];
+        return dp[A.length];
     }
 
     void print(int[] A) {
