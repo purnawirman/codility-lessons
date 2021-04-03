@@ -11,13 +11,13 @@ class Solution {
         Arrays.sort(A);
         int result = 0;
         for (int i = 0; i < A.length - 2; i++) {
+            int k = i + 2;
             for (int j = i+1; j < A.length - 1; j++) {
-                for (int k = j+1; k < A.length; k++) {
-                    if (A[i] + A[j] <= A[k]) {
-                        break;
-                    }
-                    result++;
+                k = Math.max(k, j+1);
+                while (k < A.length && A[i] + A[j] > A[k]) {
+                    k++;
                 }
+                result += k - j - 1;
             }
         }
         return result;
