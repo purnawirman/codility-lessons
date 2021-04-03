@@ -22,7 +22,7 @@ class Solution {
             if (A[lo] + A[hi] == 0) {
                 lo++;
                 hi--;
-            } else if (Math.abs(A[lo]) < Math.abs(A[hi])) {
+            } else if (Math.abs((long) A[lo]) < Math.abs((long) A[hi])) {
                 hi--;
             } else {
                 lo++;
