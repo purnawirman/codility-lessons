@@ -9,7 +9,7 @@ class Solution {
         // write your code in Java SE 8
         final int LIMIT = 1000000000;
         int result = 0;
-        int[] counters = new int[M];
+        int[] counters = new int[M+1];
         int head = 0; 
         for (int tail = 0; tail < A.length; tail++) {
             while (counters[A[tail]] > 0) { // seen it before
