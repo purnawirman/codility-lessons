@@ -33,7 +33,8 @@ class Solution {
                 pillar = Math.min(pillar, 
                             stack.isEmpty()? last.height: stack.peekFirst().height);
                 maxDepth = Math.max(pillar - bottom, maxDepth);
-                stack.addFirst(new Node(A[start], bottom));
+                stack.addFirst(new Node(A[start], 
+                    stack.isEmpty()? A[start]: bottom));
             }
             // print(stack);
             // System.out.println("depth: " + maxDepth);
