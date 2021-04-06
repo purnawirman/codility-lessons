@@ -7,7 +7,7 @@
 class Solution {
     public int solution(String S) {
         // write your code in Java SE 8
-        if (S.length() % 2 == 0 || S.length() == 1) return 0;
+        if (S.length() % 2 == 0) return -1;
         return isPalindrome(S)? S.length() / 2: -1;
     }
     boolean isPalindrome(String S) {
