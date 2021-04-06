@@ -7,7 +7,7 @@
 class Solution {
     public int solution(String S) {
         // write your code in Java SE 8
-        int result = 0;
+        int result = -1;
         for (String password: S.split(" ")) {
             if (isValid(password)) {
                 result = Math.max(result, password.length());
